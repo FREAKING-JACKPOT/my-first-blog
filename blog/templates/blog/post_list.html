@@ -3,19 +3,16 @@
         <meta charset="utf-8">
         <title>BIBICH's blog</title>
     </head>
-        <body>
-            <div>
-                <h1><a href="/"> Django Girls Blog</a>
-            </div>
-            <div>
-                <p>published 25.06.2020, 20:16</p>
-                <h2> <a href="">My first post</a></h2>
-                <p>Muerto</p>
-            </div>
-            <div>
-                <p> published 06.06.2020, 21:16</p>
-                <h2><a href="">My second post</a></h2>
-                <p> Dirty deeds done dirt cheap</p>
-            </div>
+    <div>
+        <h1><a href="/">BIBICH's blog</a></h1>
+    </div>
+    
+    {% for post in posts %}
+        <div>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+            <p>published: {{ post.published_date }}</p>
+        </div>
+    {% endfor %}
         </body>
 </html>
